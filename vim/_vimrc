@@ -1,0 +1,71 @@
+scriptencoding utf-8
+" vim:set ts=8 sts=2 sw=2 tw=0: (この行に関しては:help modelineを参照)
+
+"---------------------------------------------------------------------------
+" 編集に関する設定:
+"
+" タブの画面上での幅
+"set tabstop=8
+set tabstop=4
+
+"---------------------------------------------------------------------------
+" GUI固有ではない画面表示の設定:
+"
+" 行番号を非表示 (number:表示)
+"set nonumber
+set number
+
+"---------------------------------------------------------------------------
+" _vimrc, _gvimrc に元から記述されていない
+" スワップファイルの出力先
+set directory=$TEMP
+"シェルの指定
+set shell=d:\cygwin64\bin\bash
+" <<, >> コマンドのシフト量(tabstopと同じにしておく)
+set shiftwidth=4
+"ステータスラインに文字コードと改行文字を表示する
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+
+
+" 検索パスの追加
+set path+=d:\cygwin64\home\katuya\TemplateLib
+set path+=c:\Program\ Files\ \(x86\)\Microsoft\ Visual\ Studio\ 11.0\VC\include
+
+" グローバルtagファイルの追加
+au BufNewFile,BufRead *.cpp,*.h,*.inc set tags+=d:\cygwin64\home\katuya\cpp.tags
+
+"---------------------------------------------------------------------------
+" Start NeoBundle settings
+"---------------------------------------------------------------------------
+"if has('vim_starting')
+"  if &compatible
+"    set nocompatible               " Be iMproved
+"  endif
+
+   " Required:
+"   set runtimepath+=$VIM/_vim/bundle/neobundle.vim/
+" endif
+
+ " Required:
+" call neobundle#begin(expand('$VIM/_vim/bundle/'))
+
+ " Let NeoBundle manage NeoBundle
+ " Required:
+" NeoBundleFetch 'Shougo/neobundle.vim'
+
+ " My Bundles here:
+ " Refer to |:NeoBundle-examples|.
+ " Note: You don't set neobundle setting in .gvimrc!
+ 
+" call neobundle#end()
+
+ " Required:
+" filetype plugin indent on
+
+ " If there are uninstalled bundles found on startup,
+ " this will conveniently prompt you to install them.
+" NeoBundleCheck
+"---------------------------------------------------------------------------
+" End NeoBundle settings
+"---------------------------------------------------------------------------
+
