@@ -60,8 +60,12 @@ export CYGWIN="winsymlinks:nativestrict $CYGWIN"
 ##export MAKE_MODE=UNIX
 
 PAGER=less
-JLESSCHARSET=japanese-sjis
-export PAGER JLESSCHARSET
+LESSCHARSET=dos
+export PAGER LESSCHARSET
+# jless が Cygwin に含まれていないのでコメントアウト
+#PAGER=jless
+#JLESSCHARSET=japanese-sjis
+#export PAGER JLESSCHARSET
 
 export SVN_EDITOR=/usr/local/bin/gvim
 
