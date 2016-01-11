@@ -49,6 +49,10 @@ set -o ignoreeof
 # K.Tokuyama
 set -o vi
 ulimit -c 0
+
+# ln -s を Windows のシンボリック作成コマンドへ変更する。管理者権限が必要。
+export CYGWIN="winsymlinks:nativestrict $CYGWIN"
+
 #export SHELL=/bin/bash
 ##export HOME=/home/katuya
 #export TMPDIR=$TEMP
