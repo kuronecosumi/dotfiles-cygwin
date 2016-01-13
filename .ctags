@@ -1,2 +1,2 @@
---langmap=c++:+.inc
+--langmap=c++:+.inl
 --sort=yes
