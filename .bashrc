@@ -46,28 +46,36 @@ set -o ignoreeof
 # for example, cd /vr/lgo/apaache would find /var/log/apache
 # shopt -s cdspell
 
-# K.Tokuyama
+
+#
+# kuronecosumi
+#
 set -o vi
 ulimit -c 0
 
 # ln -s を Windows のシンボリック作成コマンドへ変更する。管理者権限が必要。
 export CYGWIN="winsymlinks:nativestrict $CYGWIN"
-
 #export SHELL=/bin/bash
-##export HOME=/home/katuya
+#export HOME=/home/katuya
 #export TMPDIR=$TEMP
 #export TZ=JST-09
-##export MAKE_MODE=UNIX
+#export MAKE_MODE=UNIX
 
-PAGER=less
-LESSCHARSET=dos
-export PAGER LESSCHARSET
-# jless が Cygwin に含まれていないのでコメントアウト
+# less
+#PAGER=less
+#LESSCHARSET=dos
+#export PAGER LESSCHARSET
+# jless
 #PAGER=jless
 #JLESSCHARSET=japanese-sjis
 #export PAGER JLESSCHARSET
+# lv
+export PAGER=lv
+# lvのOOPS対策
+export TERM=cygwin
 
 export SVN_EDITOR=/usr/local/bin/gvim
+export GIT_EDITOR=/usr/local/bin/gvim
 
 
 # Completion options
@@ -138,20 +146,18 @@ export SVN_EDITOR=/usr/local/bin/gvim
  alias la='ls -A'                              # all but . and ..
 # alias l='ls -CF'                              #
 
-# K.Tokuyama
+
+#
+# kuronecosumi
+#
 alias rmt='rm -f *~'
 alias gv='gvim . &'
-
-alias ksdks='cd ~/project/ksdk/src/ksdk'
-alias kres='cd ~/project/kre/src/kre'
-
-alias vc='cd /cygdrive/c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Studio\ 11.0/VC'
+alias less='less -MN'
+alias lv='lv -Os'
+#alias lv='lv -Ou8'
 
 alias ltags='find * -type d -exec dirtags.sh {} \;' 
 alias rtags='ctags --file-scope=no -R' 
-
-alias aska='cd ~/TemplateLib/Aska'
-alias atest='cd ~/TemplateLib/gtest/test/Aska'
 
 
 # Umask
