@@ -31,8 +31,14 @@ set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V
 set path+=d:\cygwin64\home\katuya\TemplateLib
 set path+=c:\Program\ Files\ \(x86\)\Microsoft\ Visual\ Studio\ 11.0\VC\include
 
-" グローバルtagファイルの追加
-au BufNewFile,BufRead *.cpp,*.h,*.inc set tags+=d:\cygwin64\home\katuya\cpp.tags
+
+augroup my_autocmd
+  autocmd!
+  " ファイルタイプ
+  autocmd BufNewFile,BufRead *.xaml setfiletype xml
+  " グローバルtagファイルの追加
+  autocmd BufNewFile,BufRead *.cpp,*.h,*.inl set tags+=d:\cygwin64\home\katuya\tags
+augroup END
 
 "---------------------------------------------------------------------------
 " Start NeoBundle settings
